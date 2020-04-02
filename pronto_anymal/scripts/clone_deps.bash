@@ -3,7 +3,7 @@
 DEST=${CMAKE_PREFIX_PATH%%:*}/../src
 
 # Pronto core libraries
-git clone https://github.com/ori-drs/pronto.git ${DEST}/pronto
+git clone -b pronto-anymal-example https://github.com/ori-drs/pronto.git ${DEST}/pronto
 
 # Pronto dependencies
 git clone https://github.com/ori-drs/common_utils.git ${DEST}/pronto_common_utils
