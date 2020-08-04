@@ -46,7 +46,7 @@ Finally, press the space bar on the first terminal to start the rosbag replay.
 
 This will run Pronto in inertial-kinematics + visual odometry mode and visualize it in RViz:
 
-![pronto_anymal_rviz](/home/mcamurri/catkin_ws/src/pronto_anymal_example/pronto_anymal/doc/rviz_output.png  "Pronto ANYmal RViz")
+![pronto_anymal_rviz](./pronto_anymal/doc/rviz_output.png  "Pronto ANYmal RViz")
 
 ## Configuration
 You can change the parameters of the Pronto estimator in the `state_estimator.yaml` configuration file  under the `pronto_anymal/config` folder. 
@@ -55,4 +55,4 @@ To integrate your own Visual and LIDAR Odometry packages, just make them produce
 
 Even if the VO module is called `fovis`, Pronto does not depend on FOVIS and can accept any relative measurement of type `pronto_msgs/VisualOdometryUpdate`. In the same way, the LIDAR odometry module has to produce `pronto_msgs/LidarOdometryUpdate` messages. 
 
-The message definitions are available [here](https://github.com/ori-drs/pronto/tree/add-fovis-aicp/pronto_msgs/msg).
+The message definitions are available [here](https://github.com/ori-drs/pronto/tree/pronto-anymal-example/pronto_msgs/msg).
