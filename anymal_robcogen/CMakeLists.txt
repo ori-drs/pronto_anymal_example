@@ -19,13 +19,13 @@ include_directories(include
 include_directories(./include)
 include_directories(./include/${PROJECT_NAME})
 
-set(SOURCES ${CMAKE_SOURCE_DIR}/src/transforms.cpp
-            ${CMAKE_SOURCE_DIR}/src/jacobians.cpp
-            ${CMAKE_SOURCE_DIR}/src/jsim.cpp
-            ${CMAKE_SOURCE_DIR}/src/inverse_dynamics.cpp
-            ${CMAKE_SOURCE_DIR}/src/forward_dynamics.cpp
-            ${CMAKE_SOURCE_DIR}/src/inertia_properties.cpp
-            ${CMAKE_SOURCE_DIR}/src/miscellaneous.cpp)
+set(SOURCES ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/transforms.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/jacobians.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/jsim.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/inverse_dynamics.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/forward_dynamics.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/inertia_properties.cpp
+            ${CMAKE_SOURCE_DIR}/pronto_anymal_example/anymal_robcogen/src/miscellaneous.cpp)
 
 
 catkin_package(INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
