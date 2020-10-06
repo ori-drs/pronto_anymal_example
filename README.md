@@ -25,7 +25,8 @@ Clone this repo, its dependencies, and compile the `pronto_anymal` package:
 roscd
 cd ../src
 git clone https://github.com/ori-drs/pronto_anymal_example
-pronto_anymal_example/pronto_anymal/scripts/clone_deps.sh
+git clone https://bitbucket.org/DataspeedInc/velodyne_simulator.git
+pronto_anymal_example/pronto_anymal/scripts/clone_deps.bash
 catkin build pronto_anymal
 roscd
 source setup.bash
