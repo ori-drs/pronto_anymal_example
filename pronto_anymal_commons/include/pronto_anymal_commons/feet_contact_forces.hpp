@@ -3,7 +3,7 @@
 #include <pronto_quadruped_commons/feet_contact_forces.h>
 #include <anymal_robcogen/inverse_dynamics.h>
 #include <anymal_robcogen/jsim.h>
-#include <pronto_anymal_commons/robcogen_feet_jacobians.hpp>
+#include <pronto_anymal_commons/feet_jacobians.hpp>
 #include <pronto_quadruped_commons/leg_vector_map.h>
 
 namespace pronto {

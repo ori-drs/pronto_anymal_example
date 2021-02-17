@@ -1,5 +1,5 @@
 #include "pronto_anymal_commons/forward_kinematics.hpp"
-#include <pronto_quadruped_commons/rbd/utils.h>
+#include <iit/rbd/utils.h>
 
 using namespace pronto::quadruped;
 using namespace iit::rbd;
