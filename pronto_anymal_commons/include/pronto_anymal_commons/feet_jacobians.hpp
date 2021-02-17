@@ -24,6 +24,7 @@ public:
 
     FootJac getFootJacobian(const JointState &q, const LegID &leg,
                             const double& foot_x, const double& foot_y);
+    FootJac getFootJacobianAngular(const JointState &q, const LegID &leg);
 
 private:
     pronto::anymal::Jacobians jacs_;

@@ -3,7 +3,8 @@
 #include <pronto_quadruped_commons/feet_contact_forces.h>
 #include <anymal_robcogen/inverse_dynamics.h>
 #include <anymal_robcogen/jsim.h>
-#include <pronto_anymal_commons/feet_jacobians.hpp>
+#include <pronto_anymal_commons/robcogen_feet_jacobians.hpp>
+#include <pronto_quadruped_commons/leg_vector_map.h>
 
 namespace pronto {
 namespace anymal {
@@ -12,12 +13,12 @@ class FeetContactForces : public pronto::quadruped::FeetContactForces {
 
 public:
     typedef pronto::quadruped::Vector3d Vector3d;
-    typedef pronto::quadruped::JointState JointState;
+    using JointState = pronto::quadruped::JointState;
     typedef pronto::quadruped::LegID LegID;
-    using LegVectorMap = pronto::quadruped::LegDataMap<Vector3d>;
+  using LegVectorMap = quadruped::LegVectorMap;
 
 public:
-    inline FeetContactForces() :
+    FeetContactForces() :
         inverse_dynamics_(inertia_prop_, motion_transf_),
         jsim_(inertia_prop_, force_transf_)
     {
