@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>pronto_anymal</name>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
   <description>
       The pronto_anymal package contains Pronto libraries and executables
       specific for the ANYmal robot. Mostly, this package is used to execute

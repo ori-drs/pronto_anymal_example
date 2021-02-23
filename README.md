@@ -1,6 +1,9 @@
 # pronto_anymal_example
 Demo binary and related libraries to run the Pronto state estimator on the ANYmal B robot (simplified version).
 
+## Environment
+Tested on ROS Noetic and Ubuntu 20.04 Focal Fossa. Compatibility with any other operating system or ROS version is not guaranteed nor officially supported.
+
 ## Structure
 This repository  includes three catkin packages:
 - `anymal_robcogen` kinematics/dynamics libraries generated with RobCoGen from the public URDF of the ANYmal B robot. 
@@ -11,7 +14,6 @@ This repository  includes three catkin packages:
 ## Dependencies
 To run the demo program you need the catkin packages contained in the following repositories:
 - [`pronto`](https://github.com/ori-drs/pronto) the Pronto estimator libraries
-- [`common_utils`](https://github.com/ori-drs/common_utils) dependency of the above package
 - [`fovis`](https://github.com/ori-drs/fovis_ros.git) the FOVIS visual odometry algorithm
 - [`fovis_ros`](https://github.com/ori-drs/fovis_ros/tree/pronto-fovis)  ROS wrapper for FOVIS
 - [`anymal_b_simple_description`](https://github.com/mcamurri/anymal_b_simple_description) public description of the ANYmal B (augmented with standard sensor components)
