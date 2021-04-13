@@ -1,32 +1,28 @@
 # pronto_anymal_example
 Demo binary and related libraries to run the Pronto state estimator on the ANYmal B robot (simplified version).
 
+## Environment
+Tested on ROS Noetic and Ubuntu 20.04 Focal Fossa. Compatibility with any other operating system or ROS version is not guaranteed nor officially supported. Our build server ensures that the example can be built using Ubuntu 18.04/ROS Melodic and Ubuntu 20.04/ROS Noetic.
+
 ## Structure
 This repository  includes three catkin packages:
-- `anymal_robcogen` kinematics/dynamics libraries generated with RobCoGen from the public URDF of the ANYmal B robot. 
+- `anymal_b_robcogen` kinematics/dynamics libraries generated with RobCoGen from the public URDF of the ANYmal B robot. 
   For more info on how to generate the code for your quadruped robot, check out the [quadruped_robcogen]() package. 
-- `pronto_anymal_commons` implementation (using the package above) of the kinematics/dynamics interfaces to perform the estimation. The interfaces do not depend on RobCoGen, you can implement them with any other library like RBDL or Pinocchio. Here we use RobCoGen though.
-- `pronto_anymal` Pronto ANYmal executable
+- `pronto_anymal_b_commons` implementation (using the package above) of the kinematics/dynamics interfaces to perform the estimation. The interfaces do not depend on RobCoGen, you can implement them with any other library like RBDL or Pinocchio. Here we use RobCoGen though.
+- `pronto_anymal_b` Pronto ANYmal executable
 
 ## Dependencies
 To run the demo program you need the catkin packages contained in the following repositories:
-- [`pronto`](https://github.com/ori-drs/pronto) the Pronto estimator libraries
-- [`common_utils`](https://github.com/ori-drs/common_utils) dependency of the above package
-- [`fovis`](https://github.com/ori-drs/fovis_ros.git) the FOVIS visual odometry algorithm
-- [`fovis_ros`](https://github.com/ori-drs/fovis_ros/tree/pronto-fovis)  ROS wrapper for FOVIS
-- [`anymal_b_simple_description`](https://github.com/mcamurri/anymal_b_simple_description) public description of the ANYmal B (augmented with standard sensor components)
-- [`realsense`](https://github.com/ori-drs/realsense/tree/development-fixes) description file of the realsense device
+- [`fovis`](https://github.com/ori-drs/fovis.git) the FOVIS visual odometry algorithm
+- [`fovis_ros`](https://github.com/ori-drs/fovis_ros/tree/pronto-fovis)  ROS wrapper for FOVIS (branch `pronto-fovis`)
+- [`realsense`](https://github.com/IntelRealSense/realsense-ros) description file of the realsense device
 
-You can automatically clone them with the `clone_deps.sh` script under the `scripts` folder (see below).
+You can automatically clone them with the `clone_deps.sh` script under the `scripts` folder (see below). All dependencies can be built in a catkin workspace (note: `colcon` as a build tool is currently not supported/does not work).
 
 ## How to Install
-Clone this repo, its dependencies, and compile the `pronto_anymal` package:
+Clone compile the `pronto_anymal_b` package:
 ```
-roscd
-cd ../src
-git clone https://github.com/ori-drs/pronto_anymal_example
-pronto_anymal_example/pronto_anymal/scripts/clone_deps.sh
-catkin build pronto_anymal
+catkin build pronto_anymal_b
 roscd
 source setup.bash
 ```
@@ -40,13 +36,13 @@ rosbag play --clock --pause fsc_minimal_joint_states_short.bag
 in a separate terminal, launch the demo launcher:
 
 ```
-roslaunch pronto_anymal pronto_anymal.launch
+roslaunch pronto_anymal_b demo.launch
 ```
 Finally, press the space bar on the first terminal to start the rosbag replay.
 
 This will run Pronto in inertial-kinematics + visual odometry mode and visualize it in RViz:
 
-![pronto_anymal_rviz](./pronto_anymal/doc/rviz_output.png  "Pronto ANYmal RViz")
+![pronto_anymal_rviz](./pronto_anymal_b/doc/rviz_output.png  "Pronto ANYmal RViz")
 
 ## Configuration
 You can change the parameters of the Pronto estimator in the `state_estimator.yaml` configuration file  under the `pronto_anymal/config` folder. 

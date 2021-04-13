@@ -1,0 +1,20 @@
+- git:
+    uri: https://github.com/ori-drs/pronto.git
+    version: master
+    local-name: pronto
+#- git:
+#    uri: https://github.com/mcamurri/anymal_b_simple_description.git
+#    version: master
+#    local-name: anymal_b_simple_description
+- git:
+    uri: https://github.com/ori-drs/fovis.git
+    version: master
+    local-name: fovis
+- git:
+    uri: https://github.com/ori-drs/fovis_ros.git
+    version: pronto-fovis
+    local-name: fovis_ros
+- git:
+    uri: https://github.com/ori-drs/common_utils_drs.git
+    version: master
+    local-name: common_utils_drs
