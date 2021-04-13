@@ -42,7 +42,7 @@ Finally, press the space bar on the first terminal to start the rosbag replay.
 
 This will run Pronto in inertial-kinematics + visual odometry mode and visualize it in RViz:
 
-![pronto_anymal_rviz](./pronto_anymal/doc/rviz_output.png  "Pronto ANYmal RViz")
+![pronto_anymal_rviz](./pronto_anymal_b/doc/rviz_output.png  "Pronto ANYmal RViz")
 
 ## Configuration
 You can change the parameters of the Pronto estimator in the `state_estimator.yaml` configuration file  under the `pronto_anymal/config` folder. 
