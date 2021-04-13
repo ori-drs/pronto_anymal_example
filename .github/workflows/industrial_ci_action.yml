@@ -1,0 +1,37 @@
+# This config uses industrial_ci (https://github.com/ros-industrial/industrial_ci.git).
+# For troubleshooting, see readme (https://github.com/ros-industrial/industrial_ci/blob/master/README.rst)
+
+name: CI
+
+# This determines when this workflow is run
+on:
+  # on all pushes and PRs
+  push:
+  pull_request:
+  # once a week on Monday at 8am to catch changes to dependencies
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 8 * * 1'
+
+jobs:
+  CI:
+    strategy:
+      matrix:
+        env:
+          - {ROS_DISTRO: melodic}
+          - {ROS_DISTRO: noetic}
+    env:
+      CCACHE_DIR: /github/home/.ccache # Enable ccache
+      UPSTREAM_WORKSPACE: dependencies.rosinstall
+      BUILDER: catkin_tools
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # This step will fetch/store the directory used by ccache before/after the ci run
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: ccache-${{ matrix.env.ROS_DISTRO }}-${{ matrix.env.ROS_REPO }}
+      # Run industrial_ci
+      - uses: 'ros-industrial/industrial_ci@master'
+        env: ${{ matrix.env }}
