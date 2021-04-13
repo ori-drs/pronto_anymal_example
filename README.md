@@ -1,4 +1,6 @@
 # pronto_anymal_example
+[![CI](https://github.com/ori-drs/pronto_anymal_example/actions/workflows/industrial_ci_action.yml/badge.svg?branch=master)](https://github.com/ori-drs/pronto_anymal_example/actions/workflows/industrial_ci_action.yml)
+
 Demo binary and related libraries to run the Pronto state estimator on the ANYmal B robot (simplified version).
 
 ## Environment
