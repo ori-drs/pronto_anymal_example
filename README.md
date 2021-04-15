@@ -9,7 +9,7 @@ Tested on ROS Noetic and Ubuntu 20.04 Focal Fossa. Compatibility with any other 
 ## Structure
 This repository  includes three catkin packages:
 - `anymal_b_robcogen` kinematics/dynamics libraries generated with RobCoGen from the public URDF of the ANYmal B robot. 
-  For more info on how to generate the code for your quadruped robot, check out the [quadruped_robcogen]() package. 
+  For more info on how to generate the code for your quadruped robot, check out the [quadruped_robcogen](https://github.com/ori-drs/quadruped_robcogen) package. 
 - `pronto_anymal_b_commons` implementation (using the package above) of the kinematics/dynamics interfaces to perform the estimation. The interfaces do not depend on RobCoGen, you can implement them with any other library like RBDL or Pinocchio. Here we use RobCoGen though.
 - `pronto_anymal_b` Pronto ANYmal executable
 
