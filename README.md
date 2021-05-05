@@ -17,9 +17,15 @@ This repository  includes three catkin packages:
 To run the demo program you need the catkin packages contained in the following repositories:
 - [`fovis`](https://github.com/ori-drs/fovis.git) the FOVIS visual odometry algorithm
 - [`fovis_ros`](https://github.com/ori-drs/fovis_ros/tree/pronto-fovis)  ROS wrapper for FOVIS (branch `pronto-fovis`)
-- [`realsense`](https://github.com/IntelRealSense/realsense-ros) description file of the realsense device
+- [`realsense2_description`](https://github.com/IntelRealSense/realsense-ros) description file of the realsense device
 
-You can automatically clone them with the `clone_deps.sh` script under the `scripts` folder (see below). All dependencies can be built in a catkin workspace (note: `colcon` as a build tool is currently not supported/does not work).
+The `realsense2_description` can be installed automatically via `rosdep` or manually from APT:
+```
+sudo apt-get install ros-$ROS_DISTRO-realsense2-description
+```
+
+You can automatically clone the other dependencies with the `clone_deps.sh` script under the `scripts` folder (see below). The cloned dependencies can be built in a catkin workspace 
+**Note:** `colcon` as a build tool is currently not supported/does not work.
 
 ## How to Install
 Clone compile the `pronto_anymal_b` package:

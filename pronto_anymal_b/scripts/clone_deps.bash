@@ -19,6 +19,3 @@ git clone -b pronto-fovis https://github.com/ori-drs/fovis_ros.git ${DEST}/fovis
 # Tools to visualize path in RViz
 git clone https://github.com/ori-drs/hector_slam.git ${DEST}/hector_slam
 
-# RealSense Description
-git clone https://github.com/IntelRealSense/realsense-ros ${DEST}/realsense
-

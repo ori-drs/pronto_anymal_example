@@ -3,10 +3,6 @@
     version: master
     local-name: pronto
 - git:
-    uri: https://github.com/IntelRealSense/realsense-ros.git 
-    version: 2.3.0
-    local-name: realsense_ros
-- git:
     uri: https://github.com/ori-drs/fovis.git
     version: master
     local-name: fovis
