@@ -4,7 +4,7 @@
     local-name: pronto
 - git:
     uri: https://github.com/IntelRealSense/realsense-ros.git 
-    version: master
+    version: 2.3.0
     local-name: realsense_ros
 - git:
     uri: https://github.com/ori-drs/fovis.git
