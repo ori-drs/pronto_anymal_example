@@ -38,7 +38,7 @@ source setup.bash
 ## How to Run 
 To run the Pronto estimator on your PC, download the example dataset with the provided script (if you want to download it manually, it is [here](https://drive.google.com/open?id=1a_BA7yyj4XdUcCXrxpz5o1PdCi0fJn5K)) and run it paused:
 ```
-$(rospack find pronto_anymal)/scripts/download_sample_rosbag.sh
+$(rospack find pronto_anymal_b)/scripts/download_sample_rosbag.sh
 rosbag play --clock --pause fsc_minimal_joint_states_short.bag
 ```
 in a separate terminal, launch the demo launcher:
@@ -59,4 +59,4 @@ To integrate your own Visual and LIDAR Odometry packages, just make them produce
 
 Even if the VO module is called `fovis`, Pronto does not depend on FOVIS and can accept any relative measurement of type `pronto_msgs/VisualOdometryUpdate`. In the same way, the LIDAR odometry module has to produce `pronto_msgs/LidarOdometryUpdate` messages. 
 
-The message definitions are available [here](https://github.com/ori-drs/pronto/tree/pronto-anymal-example/pronto_msgs/msg).
+The message definitions are available [here](https://github.com/ori-drs/pronto/tree/master/pronto_msgs/msg).
