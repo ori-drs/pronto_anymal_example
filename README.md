@@ -17,9 +17,15 @@ This repository  includes three catkin packages:
 To run the demo program you need the catkin packages contained in the following repositories:
 - [`fovis`](https://github.com/ori-drs/fovis.git) the FOVIS visual odometry algorithm
 - [`fovis_ros`](https://github.com/ori-drs/fovis_ros/tree/pronto-fovis)  ROS wrapper for FOVIS (branch `pronto-fovis`)
-- [`realsense`](https://github.com/IntelRealSense/realsense-ros) description file of the realsense device
+- [`realsense2_description`](https://github.com/IntelRealSense/realsense-ros) description file of the realsense device
 
-You can automatically clone them with the `clone_deps.sh` script under the `scripts` folder (see below). All dependencies can be built in a catkin workspace (note: `colcon` as a build tool is currently not supported/does not work).
+The `realsense2_description` can be installed automatically via `rosdep` or manually from APT:
+```
+sudo apt-get install ros-$ROS_DISTRO-realsense2-description
+```
+
+You can automatically clone the other dependencies with the `clone_deps.sh` script under the `scripts` folder (see below). The cloned dependencies can be built in a catkin workspace 
+**Note:** `colcon` as a build tool is currently not supported/does not work.
 
 ## How to Install
 Clone compile the `pronto_anymal_b` package:
@@ -32,7 +38,7 @@ source setup.bash
 ## How to Run 
 To run the Pronto estimator on your PC, download the example dataset with the provided script (if you want to download it manually, it is [here](https://drive.google.com/open?id=1a_BA7yyj4XdUcCXrxpz5o1PdCi0fJn5K)) and run it paused:
 ```
-$(rospack find pronto_anymal)/scripts/download_sample_rosbag.sh
+$(rospack find pronto_anymal_b)/scripts/download_sample_rosbag.sh
 rosbag play --clock --pause fsc_minimal_joint_states_short.bag
 ```
 in a separate terminal, launch the demo launcher:
@@ -53,4 +59,4 @@ To integrate your own Visual and LIDAR Odometry packages, just make them produce
 
 Even if the VO module is called `fovis`, Pronto does not depend on FOVIS and can accept any relative measurement of type `pronto_msgs/VisualOdometryUpdate`. In the same way, the LIDAR odometry module has to produce `pronto_msgs/LidarOdometryUpdate` messages. 
 
-The message definitions are available [here](https://github.com/ori-drs/pronto/tree/pronto-anymal-example/pronto_msgs/msg).
+The message definitions are available [here](https://github.com/ori-drs/pronto/tree/master/pronto_msgs/msg).

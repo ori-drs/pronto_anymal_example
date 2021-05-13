@@ -29,6 +29,8 @@
   <exec_depend>anymal_b_simple_description</exec_depend>
   <exec_depend>fovis_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
+  <exec_depend>image_transport_plugins</exec_depend>
+
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
