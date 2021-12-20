@@ -30,10 +30,6 @@ public:
 
     Matrix3d getFootOrientation(const JointState &q, const LegID &leg);
 
-    Vector3d getShinPos(const JointState& q,
-                        const double& contact_pos,
-                        const LegID& leg);
-
 private:
     pronto::anymal::HomogeneousTransforms ht_;
 };
