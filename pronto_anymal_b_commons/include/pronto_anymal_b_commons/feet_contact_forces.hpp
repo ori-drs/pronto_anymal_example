@@ -84,10 +84,6 @@ public:
         return res;
     }
 
-    inline void setContactPoint(LegID leg, double foot_x, double foot_y){
-
-    }
-
 private:
     pronto::anymal::dyn::InertiaProperties inertia_prop_;
     pronto::anymal::MotionTransforms motion_transf_;

@@ -61,13 +61,5 @@ Matrix3d ForwardKinematics::getFootOrientation(const JointState &q, const LegID 
     }
 }
 
-Vector3d ForwardKinematics::getShinPos(const JointState& q,
-                                               const double& contact_pos,
-                                               const LegID& leg){
-    return getFootPos(q, leg);
-}
-
-
 }
 }
-

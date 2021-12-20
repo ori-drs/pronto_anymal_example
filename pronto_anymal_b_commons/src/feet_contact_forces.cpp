@@ -6,7 +6,6 @@ using namespace iit;
 
 namespace pronto {
 namespace anymal {
-
 bool FeetContactForces::getFootGRF(const JointState &q,
                                       const JointState &qd,
                                       const JointState &tau,
@@ -18,7 +17,6 @@ bool FeetContactForces::getFootGRF(const JointState &q,
                                       const Vector3d &xdd,
                                       const Vector3d &omega,
                                       const Vector3d &omegad) {
-
     Eigen::Matrix3d foot_jacobian = feet_jacs_.getFootJacobian(q, leg);
 
     rbd::Vector6D gravity_world = rbd::Vector6D::Zero();
@@ -70,7 +68,5 @@ bool FeetContactForces::getFootGRF(const JointState &q,
 
     return foot_grf.allFinite();
 }
-
-
-}
-}
+}  // namespace anymal
+}  // namespace pronto
